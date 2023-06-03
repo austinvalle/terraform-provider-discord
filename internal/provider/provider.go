@@ -29,8 +29,8 @@ func (p *DiscordProvider) Schema(ctx context.Context, req provider.SchemaRequest
 }
 
 func (p *DiscordProvider) Configure(ctx context.Context, req provider.ConfigureRequest, resp *provider.ConfigureResponse) {
-	token, found := os.LookupEnv("DISCORD_TOKEN")
-	if !found {
+	token := os.Getenv("DISCORD_TOKEN")
+	if token == "" {
 		resp.Diagnostics.AddError("Provider Configure Error", "DISCORD_TOKEN environment variable must be set")
 		return
 	}
