@@ -78,4 +78,4 @@ jobs:
       - name: Run acceptance test
         run: make testacc
         env:
-          DISCORD_TOKEN: ${{ secrets.CI_DISCORD_TOKEN }}
+          DISCORD_TOKEN: "${{ secrets.CI_DISCORD_TOKEN }}"
