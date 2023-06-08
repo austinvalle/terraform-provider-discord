@@ -28,5 +28,3 @@ data "discord_guild" "guild" {
 ### Read-Only
 
 - `name` (String) Guild name
-
-
